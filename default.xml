@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <!-- SSH：luoorshi 名下仓库 -->
+  <remote name="github-ssh" fetch="ssh://git@github.com/" />
+  <!-- HTTPS：第三方上游 -->
+  <remote name="github-https" fetch="https://github.com/" />
+
+  <default revision="master" remote="github-ssh" sync-j="4" />
+
+  <project name="luoorshi/u-boot" path="u-boot" remote="github-ssh" />
+  <project name="luoorshi/linux" path="linux" remote="github-ssh" />
+
+  <project name="crust-firmware/crust" path="crust" remote="github-https" revision="master" />
+  <project name="TrustedFirmware-A/trusted-firmware-a" path="arm-trusted-firmware" remote="github-https" revision="main" />
+
+  <!--
+    以下仓库尚未建立或方案未定，请勿取消注释直至 URL 可用，否则 repo sync 会失败。
+
+    工具链 / 预编译工具等：
+    <project name="luoorshi/tools" path="tools" remote="github-ssh" revision="master" />
+
+    编译脚本、打包脚本等：
+    <project name="luoorshi/build-scripts" path="build-scripts" remote="github-ssh" revision="master" />
+
+    Ubuntu 根文件系统通常体积大、不适合直接进 Git；若日后有专用镜像仓库可改为：
+    <project name="luoorshi/ubuntu-rootfs" path="ubuntu-rootfs" remote="github-ssh" revision="master" />
+    否则建议在 README 约定目录 ubuntu-rootfs/，用 rsync、内网镜像或解压 tarball 填充。
+  -->
+</manifest>
