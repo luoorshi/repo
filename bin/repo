@@ -118,18 +118,19 @@ if __name__ == "__main__":
 
 
 # repo default configuration
+# Defaults: GitHub mirror + tag v2.62 (override with REPO_URL / REPO_REV).
 #
 REPO_URL = os.environ.get("REPO_URL", None)
 if not REPO_URL:
-    REPO_URL = "https://gerrit.googlesource.com/git-repo"
+    REPO_URL = "https://github.com/GerritCodeReview/git-repo.git"
 REPO_REV = os.environ.get("REPO_REV")
 if not REPO_REV:
-    REPO_REV = "stable"
+    REPO_REV = "v2.62"
 # URL to file bug reports for repo tool issues.
 BUG_URL = "https://issues.gerritcodereview.com/issues/new?component=1370071"
 
 # increment this whenever we make important changes to this script
-VERSION = (2, 54)
+VERSION = (2, 62)
 
 # increment this if the MAINTAINER_KEYS block is modified
 KEYRING_VERSION = (2, 3)
