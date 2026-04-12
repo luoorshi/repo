@@ -112,6 +112,7 @@ export PATH="$PWD/bin:$PATH"
 # -u：本 manifest 仓库的 git URL
 # -b：manifest 所在分支（例如 main 或 master）
 repo init -u <你的_manifest_仓库_URL> -b <分支名> -m default.xml
+repo init -u git@github.com:luoorshi/repo.git -b main -m default.xml --git-lfs
 repo sync -j"$(nproc)"
 ```
 
