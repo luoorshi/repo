@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- SSH：luoorshi 名下仓库 -->
-  <remote name="github-ssh" fetch="ssh://git@github.com/" />
+  <!-- SSH：luoorshi 名下仓库。remote name 保持 github-ssh，推送用：git push github-ssh <分支> -->
+  <remote name="github-ssh"
+          fetch="ssh://git@github.com/"
+          pushurl="ssh://git@github.com/" />
 
   <default revision="master" remote="github-ssh" sync-j="4" lfs="true" />
 
-  <project name="luoorshi/u-boot" path="u-boot" remote="github-ssh" />
-  <project name="luoorshi/linux" path="linux" remote="github-ssh" />
+  <project name="luoorshi/u-boot" path="u-boot" remote="github-ssh" revision="master" />
+  <project name="luoorshi/linux" path="linux" remote="github-ssh" revision="master" />
 
   <!-- 与 tools 一致走 SSH，避免仅 443 不稳定时出现 GnuTLS / 连接超时 -->
   <project name="crust-firmware/crust" path="crust" remote="github-ssh" revision="master" />
