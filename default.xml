@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
-  <!-- SSH：luoorshi 名下仓库。remote name 保持 github-ssh，推送用：git push github-ssh <分支> -->
+  <!--
+    SSH：luoorshi 名下仓库。remote name 保持 github-ssh，推送用：git push github-ssh <分支>
+    fetch / pushurl 末尾不要加 /。
+    repo v2.62 写 push 地址时是字符串拼接 pushurl + "/" + project name，不会去掉末尾斜杠。
+    写成 ssh://git@github.com/ 会得到 ssh://git@github.com//luoorshi/u-boot，git push 失败。
+    fetch 会先 rstrip("/")，所以同样带末尾斜杠时 fetch 仍然正常，只有 push 出错。
+  -->
   <remote name="github-ssh"
-          fetch="ssh://git@github.com/"
-          pushurl="ssh://git@github.com/" />
+          fetch="ssh://git@github.com"
+          pushurl="ssh://git@github.com" />
 
   <default revision="master" remote="github-ssh" sync-j="4" lfs="true" />
 

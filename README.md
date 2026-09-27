@@ -45,6 +45,13 @@ if not REPO_REV:
     REPO_REV = "v2.62"
 ```
 
+``` shell
+
+repo init -u git@github.com:luoorshi/repo.git -b main -m default.xml --git-lfs --depth 2
+
+```
+
+
 ### 步骤 1：在能上网的机器上制作镜像
 
 任选其一作为源：
